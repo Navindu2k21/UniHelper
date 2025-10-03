@@ -1,0 +1,99 @@
+/* --- Copied from main.css for safe removal --- */
+.custom-select {
+    position: relative;
+    width: 200px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/* If you want the background image from main.css, uncomment below and add the image file */
+/*
+body {
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+}
+*/
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.login-container, .registration-container {
+    background: rgba(255,255,255,0.95);
+    padding: 2.5rem 2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    max-width: 350px;
+    width: 100%;
+    margin: 4vh auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h2 {
+    text-align: center;
+    color: #2575fc;
+    margin-bottom: 1.5rem;
+}
+.logo-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.2rem;
+}
+label {
+    font-weight: 500;
+    color: #333;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.6rem;
+    margin: 0.3rem 0 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: #f7f9fa;
+    transition: border 0.2s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border: 1.5px solid #2575fc;
+    outline: none;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 0.7rem;
+    background: #2575fc;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+input[type="submit"]:hover {
+    background: #6a11cb;
+}
+.login-link, .register-link {
+    display: block;
+    text-align: center;
+    margin-top: 1.2rem;
+    color: #2575fc;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.login-link:hover, .register-link:hover {
+    color: #6a11cb;
+    text-decoration: underline;
+}

@@ -1,0 +1,14 @@
+.custom-select {
+    position: relative;
+    width: 200px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+body {
+    background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+}
