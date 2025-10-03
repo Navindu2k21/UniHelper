@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniHelper - University Helper Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(0,0,0,0.4);
+            border-radius: 1.5rem;
+            box-shadow: 0 2px 12px rgba(31,38,135,0.10);
+            padding: 2.5rem 2rem;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .features {
+            margin: 2rem 0 1rem 0;
+            text-align: left;
+        }
+        .features li {
+            margin-bottom: 0.7rem;
+            font-size: 1.08rem;
+        }
+        .github-link {
+            color: #fff;
+            background: #2575fc;
+            padding: 0.7rem 1.5rem;
+            border-radius: 1.2rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            display: inline-block;
+            margin-top: 1.2rem;
+        }
+        .github-link:hover {
+            background: #6a11cb;
+        }
+        .screenshots {
+            margin-top: 2rem;
+        }
+        .screenshots img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(31,38,135,0.10);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fa fa-graduation-cap"></i> UniHelper</h1>
+        <p>A modern PHP-based university helper platform for students.<br>
+        <b>Note:</b> This is a PHP project and cannot be run directly on GitHub Pages.<br>
+        Please clone the repo and run it on a local or remote PHP server.</p>
+        <ul class="features">
+            <li><i class="fa fa-user-plus"></i> Registration & Login with session management</li>
+            <li><i class="fa fa-user-circle"></i> Interactive profile with avatar upload</li>
+            <li><i class="fa fa-book"></i> Subject management and administration</li>
+            <li><i class="fa fa-link"></i> Lecture links and timetable</li>
+            <li><i class="fa fa-calendar-check"></i> Daily plan and monthly progress tracking</li>
+            <li><i class="fa fa-laptop"></i> Modern, responsive, professional UI</li>
+        </ul>
+        <a class="github-link" href="https://github.com/Navindu2k21/UniHelper" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+        <div class="screenshots">
+            <!-- Add screenshots of your app here for demo -->
+            <!-- <img src="screenshots/home.png" alt="Home Screenshot"> -->
+            <!-- <img src="screenshots/profile.png" alt="Profile Screenshot"> -->
+        </div>
+    </div>
+</body>
+</html>
