@@ -39,17 +39,20 @@ $_SESSION['avatar'] = $avatar;
         min-height: 100vh;
     }
     .profile-card {
-        background: rgba(255,255,255,0.10);
-        border-radius: 1.5rem;
-        box-shadow: 0 2px 12px rgba(31,38,135,0.10);
-        padding: 2.5rem 2rem 2rem 2rem;
+        background: rgba(255,255,255,0.18);
+        border-radius: 2rem;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+        padding: 3rem 2.5rem 2.5rem 2.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         min-width: 340px;
         max-width: 420px;
-        transition: box-shadow 0.2s;
+        transition: box-shadow 0.25s, background 0.25s;
         position: relative;
+        backdrop-filter: blur(12px) saturate(140%);
+        border: 1.5px solid rgba(255,255,255,0.22);
+        margin-top: 2.5rem;
     }
     .profile-avatar {
         margin-bottom: 1.2rem;
@@ -65,16 +68,16 @@ $_SESSION['avatar'] = $avatar;
         align-items: center;
         width: 100%;
     }
-    .profile-avatar img {
-        width: 44px;
-        height: 44px;
+    .avatar-img-wrapper img {
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         object-fit: cover;
-        border: none;
+        border: 3px solid #fff;
         background: #e3e9f7;
-        box-shadow: 0 1px 4px rgba(37,117,252,0.10);
+        box-shadow: 0 4px 16px rgba(37,117,252,0.18);
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 1.2rem auto;
     }
     .edit-avatar-btn {
         position: absolute;
@@ -102,15 +105,19 @@ $_SESSION['avatar'] = $avatar;
         text-align: center;
     }
     .profile-info h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 700;
-        margin-bottom: 0.5rem;
-        color: #fff;
+        margin-bottom: 0.7rem;
+        color: #222;
+        letter-spacing: 1px;
     }
     .profile-info p {
-        color: #e3e9f7;
-        margin-bottom: 0.3rem;
-        font-size: 1.05rem;
+        color: #444;
+        margin-bottom: 0.5rem;
+        font-size: 1.08rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
     .profile-info input {
         background: rgba(255,255,255,0.15);
@@ -129,9 +136,9 @@ $_SESSION['avatar'] = $avatar;
         background: rgba(255,255,255,0.25);
     }
     .profile-actions {
-        margin-top: 1.2rem;
+        margin-top: 1.5rem;
         display: flex;
-        gap: 1rem;
+        gap: 1.2rem;
         justify-content: center;
     }
     .avatar-upload-form {
@@ -165,9 +172,9 @@ $_SESSION['avatar'] = $avatar;
             <button type="submit"><i class="fa fa-upload"></i> Upload Photo</button>
         </form>
         <div class="profile-info" id="profileInfo">
-            <h2 id="profileName"><?php echo htmlspecialchars($name); ?></h2>
-            <p id="profileId">Student ID: <span><?php echo htmlspecialchars($student_id); ?></span></p>
-            <p id="profileEmail">Email: <span><?php echo htmlspecialchars($email); ?></span></p>
+        <h2 id="profileName"><i class="fa fa-user-circle"></i> <?php echo htmlspecialchars($name); ?></h2>
+        <p id="profileId"><i class="fa fa-id-badge"></i> <span>Student ID: <?php echo htmlspecialchars($student_id); ?></span></p>
+        <p id="profileEmail"><i class="fa fa-envelope"></i> <span><?php echo htmlspecialchars($email); ?></span></p>
         </div>
         <form id="editForm" style="display:none;" class="profile-info" method="post" action="update_profile.php">
             <input type="text" id="editName" name="name" value="<?php echo htmlspecialchars($name); ?>" required>
