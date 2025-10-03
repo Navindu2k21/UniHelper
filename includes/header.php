@@ -169,15 +169,17 @@
 </body>
 <script>
 // Auto-hide nav on scroll down, show on scroll up
-let lastScrollY = window.scrollY;
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', function() {
-    if (window.scrollY > lastScrollY && window.scrollY > 80) {
-        nav.classList.add('hide-on-scroll');
-    } else {
-        nav.classList.remove('hide-on-scroll');
-    }
-    lastScrollY = window.scrollY;
+document.addEventListener('DOMContentLoaded', function() {
+    let lastScrollY = window.scrollY;
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > lastScrollY && window.scrollY > 80) {
+            nav.classList.add('hide-on-scroll');
+        } else {
+            nav.classList.remove('hide-on-scroll');
+        }
+        lastScrollY = window.scrollY;
+    });
 });
 </script>
 </body>
