@@ -211,4 +211,6 @@ function saveProfile(e) {
 }
 </script>
 </body>
+</body>
+<?php include 'includes/footer.php'; ?>
 </html>

@@ -792,4 +792,6 @@ $is_logged_in = isset($_SESSION['user_id']);
     });
     </script>
 </body>
+</body>
+<?php include 'includes/footer.php'; ?>
 </html>
