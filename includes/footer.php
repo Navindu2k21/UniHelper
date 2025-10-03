@@ -9,16 +9,23 @@
   </div>
 </footer>
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .footer {
   width: 100%;
   background: rgba(30, 40, 80, 0.92);
   color: #fff;
   padding: 1.2rem 0 1rem 0;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: 100;
   box-shadow: 0 -2px 12px rgba(31,38,135,0.10);
+  margin-top: auto;
 }
 .footer-content {
   max-width: 1200px;

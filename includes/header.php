@@ -6,16 +6,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
     nav {
-      position: fixed;
-      width: 100%;
-      height: 100px;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      background-color: rgba(0, 0, 0, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: top 0.35s cubic-bezier(.4,0,.2,1);
     }
     .nav-logo {
         display: flex;
@@ -93,6 +94,9 @@
     nav ul.menu > li:last-child {
       margin-right: 0;
     }
+        nav.hide-on-scroll {
+            top: -110px;
+        }
     @media (max-width: 900px) {
         nav {
             flex-direction: column;
@@ -162,5 +166,19 @@
         </li>
     </ul>
 </nav>
+</body>
+<script>
+// Auto-hide nav on scroll down, show on scroll up
+let lastScrollY = window.scrollY;
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > lastScrollY && window.scrollY > 80) {
+        nav.classList.add('hide-on-scroll');
+    } else {
+        nav.classList.remove('hide-on-scroll');
+    }
+    lastScrollY = window.scrollY;
+});
+</script>
 </body>
 </html>
