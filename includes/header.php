@@ -117,6 +117,7 @@
     </style>
 </head>
 <body>
+<button class="header-toggle-btn" id="headerToggleBtn" title="Hide/Show Header" style="position: fixed; top: 110px; right: 32px; z-index: 1001; background: #2575fc; color: #fff; border: none; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 16px rgba(31,38,135,0.18); cursor: pointer; opacity: 1; transition: background 0.2s, box-shadow 0.2s, opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);"><i class="fa fa-angle-up" id="headerToggleIcon"></i></button>
 <nav>
     <div class="nav-logo">
         <img src="<?php echo $backwardseperator; ?>images/logo.png" alt="UniHelper Logo" class="logo-img">
@@ -166,21 +167,41 @@
         </li>
     </ul>
 </nav>
-</body>
 <script>
-// Auto-hide nav on scroll down, show on scroll up
+// Header toggle button for show/hide nav
 document.addEventListener('DOMContentLoaded', function() {
-    let lastScrollY = window.scrollY;
     const nav = document.querySelector('nav');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > lastScrollY && window.scrollY > 80) {
+    const btn = document.getElementById('headerToggleBtn');
+    const icon = document.getElementById('headerToggleIcon');
+    let navVisible = true;
+    btn.addEventListener('click', function() {
+        navVisible = !navVisible;
+        if (!navVisible) {
             nav.classList.add('hide-on-scroll');
+            icon.classList.remove('fa-angle-up');
+            icon.classList.add('fa-angle-down');
+            btn.title = 'Show Header';
         } else {
             nav.classList.remove('hide-on-scroll');
+            icon.classList.remove('fa-angle-down');
+            icon.classList.add('fa-angle-up');
+            btn.title = 'Hide Header';
+        }
+    });
+
+    // Auto-hide nav on scroll down, show on scroll up
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > lastScrollY && window.scrollY > 80) {
+            if(navVisible) nav.classList.add('hide-on-scroll');
+        } else {
+            if(navVisible) nav.classList.remove('hide-on-scroll');
         }
         lastScrollY = window.scrollY;
     });
 });
+</script>
+</body>
 </script>
 </body>
 </html>

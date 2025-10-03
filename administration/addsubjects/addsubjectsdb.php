@@ -2,13 +2,14 @@
 
 include '../../connector.php';
 
-$id = $_GET['id'];
+// Safely get id from GET
+$id = isset($_GET['id']) ? $_GET['id'] : '';
 
 if($id == 'save'){
 
-    $subcode = $_GET['subcode'];
-    $subname = $_GET['subname'];
-    $sem = $_GET['sem'];
+    $subcode = isset($_GET['subcode']) ? $_GET['subcode'] : '';
+    $subname = isset($_GET['subname']) ? $_GET['subname'] : '';
+    $sem = isset($_GET['sem']) ? $_GET['sem'] : '';
 
     $SQLSave = "INSERT INTO `addsubjects` (sub_code,sub_name,sem) VALUES ('$subcode','$subname',$sem)";
     // echo $SQL;
@@ -21,10 +22,10 @@ if($id == 'save'){
 } 
 else if($id == 'update'){
 
-    $subcode = $_GET['subcode'];
-    $oldsubcode = $_GET['oldsubcode'];
-    $subname = $_GET['subname'];
-    $sem = $_GET['sem'];
+    $subcode = isset($_GET['subcode']) ? $_GET['subcode'] : '';
+    $oldsubcode = isset($_GET['oldsubcode']) ? $_GET['oldsubcode'] : '';
+    $subname = isset($_GET['subname']) ? $_GET['subname'] : '';
+    $sem = isset($_GET['sem']) ? $_GET['sem'] : '';
 
     $SQLUpdate = "UPDATE `addsubjects` SET sem=$sem,sub_code='$subcode',sub_name='$subname' WHERE sub_code='$oldsubcode'";
     // echo $SQLUpdate;
